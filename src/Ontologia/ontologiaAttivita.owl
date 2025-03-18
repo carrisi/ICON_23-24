@@ -1,0 +1,1835 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.semanticweb.org/ontologiaAttivita#"
+    xml:base="http://www.semanticweb.org/ontologiaAttivita"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Ontology rdf:about="http://www.semanticweb.org/ontologiaAttivita"/>
+
+  <!-- CLASSI -->
+  <owl:Class rdf:about="#Attivita"/>
+  <!-- Per attività, distinguiamo le tre tipologie -->
+  <owl:Class rdf:about="#Attivita_Sportiva">
+    <rdfs:subClassOf rdf:resource="#Attivita"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Attivita_Culturale">
+    <rdfs:subClassOf rdf:resource="#Attivita"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Attivita_Ricreativa">
+    <rdfs:subClassOf rdf:resource="#Attivita"/>
+  </owl:Class>
+  <!-- Inoltre distinguiamo il luogo -->
+  <owl:Class rdf:about="#Attivita_Indoor">
+    <rdfs:subClassOf rdf:resource="#Attivita"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Attivita_Outdoor">
+    <rdfs:subClassOf rdf:resource="#Attivita"/>
+  </owl:Class>
+
+  <!-- PROPRIETÀ DATATYPE -->
+  <owl:DatatypeProperty rdf:about="#haAttivitaPrincipale">
+    <rdfs:domain rdf:resource="#Attivita"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#haAttivitaSecondaria">
+    <rdfs:domain rdf:resource="#Attivita"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#haAttivitaAlternativa">
+    <rdfs:domain rdf:resource="#Attivita"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#haAccessorioConsigliato">
+    <rdfs:domain rdf:resource="#Attivita"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#haDescrizione">
+    <rdfs:domain rdf:resource="#Attivita"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#haEmoji">
+    <rdfs:domain rdf:resource="#Attivita"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- INDIVIDUI -->
+  <!-- La seguente ontologia definisce 108 individui per tutte le combinazioni:
+       attivita_[tipo]_[luogo]_[fascia oraria]_[temperatura]_[meteo]
+
+       Le convenzioni usate:
+       - tipo: sportiva, culturale, ricreativa
+       - luogo: indoor, outdoor
+       - fascia oraria: mattina, sera
+       - temperatura: freddo, normale, caldo
+       - meteo: nuvoloso, scoperto, rovesci
+
+       I testi sono stati scelti per riflettere scenari realistici e sensati.
+  -->
+
+  <!-- Attività Sportiva -->
+
+  <!-- Indoor -->
+  <!-- Mattina -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_indoor_mattina_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sessione di riscaldamento e treadmill in palestra con stretching mirato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Circuit training leggero in palestra
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento all'aperto sconsigliato in condizioni fredde
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scaldacollo, guanti e abbigliamento termico
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva indoor mattutina ideale per contrastare il freddo, con esercizi riscaldanti e cardio.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_indoor_mattina_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sessione di allenamento in palestra con esercizi di cardio e resistenza
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Circuit training alternativo con attrezzi leggeri
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor sconsigliato in condizioni di freddo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento termico e scarpe antiscivolo
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva indoor mattutina in condizioni fredde, concentrata su esercizi di cardio e resistenza.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_indoor_mattina_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sessione di allenamento in palestra con esercizi di cardio
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Circuit training e stretching dinamico
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor non consigliato durante le ore mattutine
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe da ginnastica adeguate e borraccia
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva indoor mattutina in condizioni normali, ideale per migliorare la resistenza.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_indoor_mattina_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sessione di allenamento con macchine cardio in palestra
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Circuit training alternativo con esercizi funzionali
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento all'aperto non raccomandato in ore con forte luce
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpa sportiva performante e abbigliamento traspirante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva indoor mattutina in condizioni normali, ideale per un allenamento completo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_indoor_mattina_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sessione leggera in palestra con esercizi di resistenza
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento moderato con macchine cardiovascolari
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività outdoor sconsigliata in condizioni di caldo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e borraccia refrigerata
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva indoor mattutina in condizioni calde, con attenzione all’idratazione e al raffreddamento.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_indoor_mattina_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sessione in palestra con esercizi di resistenza leggera
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Circuit training con attenzione all’idratazione
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor sconsigliato in caso di caldo estremo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e vestiti leggeri
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva indoor mattutina in condizioni calde, ideale per un allenamento leggero e sicuro.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Ora Outdoor per sportiva -->
+  <!-- Mattina -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_mattina_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging mattutino nel parco con abbigliamento termico
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa leggera all'aperto in zona tranquilla
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento intenso sconsigliato a causa del freddo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scaldacollo, guanti e cappotto leggero
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor mattutina in condizioni fredde, ideale per mantenersi attivi all'aperto con abbigliamento adeguato.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_mattina_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa mattutina nel parco con abbigliamento caldo
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging leggero su pista ciclabile
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor intenso sconsigliato per il freddo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Indossare giacca termica e scarpe adatte
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor mattutina in condizioni fredde e chiare, perfetta per migliorare il metabolismo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_mattina_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging mattutino in parco in condizioni normali
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Bicicletta su percorso ciclabile
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento intenso sconsigliato per non affaticarsi
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe da corsa e abbigliamento traspirante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor mattutina in condizioni normali, ideale per un risveglio attivo e salutare.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_mattina_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa mattutina in parco con condizioni di luce ottimali
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Bicicletta su strada panoramica
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento ad alta intensità sconsigliato per il rischio di affaticamento
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe sportive e abbigliamento leggero
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor mattutina in condizioni normali, perfetta per chi cerca un allenamento energico all'aperto.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_mattina_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging mattutino leggero con pausa idrica in parco
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa leggera con attenzione al ritmo e all’idratazione
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento ad alta intensità sconsigliato in condizioni di caldo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e borraccia refrigerata
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor mattutina in condizioni di caldo moderato, ideale per risvegliare il metabolismo in sicurezza.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_mattina_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa mattutina leggera con intensi momenti di recupero in area ombreggiata
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sessione di jogging alternata a camminata veloce
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor ad alta intensità sconsigliato per rischio di colpo di calore
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e abbigliamento traspirante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor mattutina in condizioni calde, con attenzione al ritmo e all’idratazione.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_mattina_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging mattutino leggero in area protetta dalle precipitazioni intense
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa a ritmo moderato con breve pausa per recupero
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor ad alta intensità sconsigliato in presenza di forti rovesci
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Impermeabile, ombrello robusto e cappellino
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor mattutina in condizioni calde con rovesci, ideale per chi desidera mantenersi attivo nonostante il maltempo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Outdoor, fascia sera -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_sera_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa serale all'aperto con abbigliamento termico
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging leggero in zona tranquilla
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività intensa sconsigliata a causa del freddo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Giacca leggera, scaldacollo e guanti
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor serale in condizioni fredde, perfetta per mantenersi attivi con sicurezza.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_sera_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa serale in parco con abbigliamento caldo
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging serale a ritmo moderato
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor ad alta intensità sconsigliato per il freddo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Giacca termica e scaldacollo
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor serale in condizioni fredde, ideale per un risveglio dolce dell'attività fisica.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_sera_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa serale nel parco in condizioni confortevoli
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Bicicletta leggera su percorsi sicuri
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento ad alta intensità sconsigliato per evitare affaticamento
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe sportive comode e abbigliamento leggero
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor serale in condizioni normali, perfetta per mantenere un ritmo costante.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_sera_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa serale con ritmo costante in parco
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Giro in bicicletta serale su pista ben illuminata
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento ad alta intensità sconsigliato per non sovraccaricare il sistema cardiovascolare
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe da corsa e abbigliamento tecnico
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor serale in condizioni normali, ideale per un allenamento equilibrato.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_sera_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa serale leggera con pausa idrica in zone ombreggiate
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging serale a ritmo moderato
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor intenso sconsigliato per il rischio di colpo di calore
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e borraccia refrigerata
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor serale in condizioni calde, ideale per mantenersi attivi in sicurezza.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_sera_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa serale leggera in area protetta, con attenzione all’idratazione
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging serale a ritmo costante
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor intenso sconsigliato per condizioni di caldo estremo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e abbigliamento traspirante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor serale in condizioni calde, ideale per mantenersi attivi con cautela.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_sportiva_outdoor_sera_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Sportiva"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Corsa serale leggera in area coperta da forti precipitazioni
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Jogging serale con ritmo moderato in condizioni rovescianti
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Allenamento outdoor intenso sconsigliato in presenza di rovesci forti
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Impermeabile, ombrello robusto e cappellino
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività sportiva outdoor serale in condizioni di caldo con rovesci, ideale per chi desidera mantenersi attivo nonostante il maltempo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏃‍♂️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Attività Culturale -->
+
+  <!-- Indoor -->
+  <!-- Mattina -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_mattina_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita guidata a una mostra d’arte in galleria
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esposizione temporanea in museo con opere classiche
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali all’aperto sconsigliati in caso di freddo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Portare un maglioncino o una sciarpa leggera
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor mattutina per contrastare il freddo, ideale per immergersi nell’arte.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_mattina_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a un museo con collezioni classiche
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esposizione d’arte antica in galleria climatizzata
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali outdoor sconsigliati in condizioni fredde
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Maglioncino o cardigan per il comfort termico
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor mattutina in condizioni fredde, per apprezzare le opere d’arte senza l’esposizione agli elementi.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_mattina_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a un museo d’arte moderna
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esposizione d’arte contemporanea in galleria
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali all’aperto non consigliati durante la mattina
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Controllare orari e prenotare i biglietti
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor mattutina in condizioni normali, per godersi le esposizioni d’arte con calma.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_mattina_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita guidata a una mostra d’arte in museo
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esposizione interattiva in galleria
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi all’aperto sconsigliati per la mancanza di copertura
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Prenotare biglietti e informarsi sugli orari
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor mattutina in condizioni normali, perfetta per apprezzare l’arte in un ambiente controllato.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_mattina_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a una mostra d’arte in auditorium climatizzato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esposizione di arte moderna in ambiente fresco
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali outdoor sconsigliati in caso di caldo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Utilizzare occhiali da sole e mantenersi idratati
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor mattutina in condizioni di caldo, ideale per godersi l’arte in un ambiente confortevole.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_mattina_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita serale a una mostra interattiva in un museo climatizzato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esibizione multimediale in ambiente fresco
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi all’aperto sconsigliati in presenza di caldo elevato
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Usare occhiali da sole e abbigliamento leggero
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor mattutina in condizioni di caldo, ideale per un’esperienza artistica confortevole.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Outdoor -->
+  <!-- Mattina -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_mattina_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata culturale nel centro storico con guida
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour architettonico dei monumenti antichi
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali all’aperto sconsigliati in condizioni fredde
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Indossare una sciarpa leggera e cappotto
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor mattutina in condizioni fredde, per scoprire la storia della città con una guida esperta.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_mattina_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour guidato dei monumenti storici in città
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita ai principali luoghi di interesse architettonico
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi all’aperto sconsigliati per il freddo mattutino
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Indossare abbigliamento caldo e comodo
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor mattutina in condizioni fredde, per scoprire la storia della città con comfort.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_mattina_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour culturale guidato tra i monumenti principali
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a gallerie d’arte all’aperto
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali intensi sconsigliati per non affaticarsi
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe comode e abbigliamento adeguato
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor mattutina in condizioni normali, perfetta per esplorare i luoghi storici con calma.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_mattina_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour della città con guida per scoprire il patrimonio storico
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a monumenti e siti storici selezionati
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali outdoor intensi sconsigliati per il rischio di esposizione
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Guanti leggeri e scarpe comode
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor mattutina in condizioni normali, ideale per conoscere la storia della città in modo rilassato.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_mattina_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour guidato in mattinata in zone ombreggiate per scoprire il patrimonio artistico
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a siti storici con guida in ambiente climatizzato
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali outdoor sconsigliati in presenza di caldo e forte esposizione
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e idratazione costante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor mattutina in condizioni di caldo, pensata per godersi il patrimonio artistico in ambienti parzialmente ombreggiati.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_mattina_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour culturale mattutino in orari freschi per evitare l’eccessivo calore
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a musei e siti storici selezionati
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi all’aperto sconsigliati in condizioni di caldo e luce diretta
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e vestiti leggeri
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor mattutina in condizioni di caldo, ideale per un tour della città in modo confortevole.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_mattina_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour guidato in mattinata in presenza di forti rovesci, con soste coperte
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a monumenti con guida in zone protette
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi all’aperto sconsigliati in presenza di rovesci intensi
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Prenotare in anticipo, portare impermeabile e verificare le condizioni
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor mattutina in condizioni di caldo e rovesci, pensata per chi desidera scoprire il patrimonio nonostante il maltempo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Indoor, fascia sera -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_sera_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Spettacolo teatrale in sala per serate fredde
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Concerto di musica classica in auditorium
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi all’aperto sconsigliati in presenza di freddo intenso
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Giacca pesante o cappotto elegante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor serale in condizioni fredde, ideale per godersi uno spettacolo in un ambiente riscaldato.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_sera_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita serale a una mostra d’arte con opere classiche
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esibizione teatrale in ambiente climatizzato
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali outdoor sconsigliati in condizioni di freddo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Maglione caldo o sciarpa elegante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor serale in condizioni fredde, per un’esperienza artistica confortevole.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_sera_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita serale a una mostra d’arte contemporanea
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Spettacolo teatrale in sala
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi culturali outdoor moderati non consigliati in serata
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Prenotare in anticipo e verificare gli orari
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor serale in condizioni normali, per godersi l’arte in un ambiente riscaldato e confortevole.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_sera_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita serale a un museo con esposizioni interattive
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esibizione multimediale in auditorium
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi all’aperto sconsigliati per mancanza di copertura
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Verificare disponibilità e prenotare
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor serale in condizioni normali, ideale per un’esperienza artistica rilassante.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_sera_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Spettacolo serale in auditorium climatizzato con proiezioni artistiche
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita serale a una mostra d’arte con esposizioni digitali
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi outdoor sconsigliati per il caldo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Occhiali da sole e prenotazione anticipata
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor serale in condizioni di caldo, pensata per un’esperienza artistica confortevole e sicura.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_sera_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Esibizione teatrale serale in auditorium climatizzato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Concerto di musica classica in ambiente fresco
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi all’aperto sconsigliati in presenza di caldo intenso
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Prenotazione anticipata e abbigliamento leggero
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor serale in condizioni di caldo, ideale per godersi lo spettacolo in un ambiente confortevole.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_indoor_sera_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Spettacolo serale in auditorium con proiezioni digitali, nonostante forti rovesci
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita guidata serale a una mostra d’arte in ambiente coperto
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi outdoor sconsigliati in presenza di rovesci intensi
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Prenotare e prepararsi con abbigliamento impermeabile
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale indoor serale in condizioni di caldo e rovesci, per un’esperienza artistica sicura.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Outdoor, fascia sera -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_sera_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale nel centro storico con guida culturale
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour notturno dei monumenti antichi
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi outdoor sconsigliati in presenza di freddo intenso
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappotto elegante e sciarpa
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor serale in condizioni fredde, ideale per scoprire il patrimonio storico in un'atmosfera suggestiva.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_sera_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour serale dei monumenti con guida specializzata
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita notturna a siti storici illuminati
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi outdoor intensi sconsigliati per il freddo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Indossare una giacca pesante e accessori termici
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor serale in condizioni fredde, perfetta per chi ama l’arte e la storia anche nelle ore notturne.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_sera_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale guidata nel centro storico
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour dei monumenti storici con spiegazioni approfondite
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi outdoor non intensi sconsigliati in presenza di temperature moderate
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe comode e abbigliamento adatto per passeggiate
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor serale in condizioni normali, ideale per una scoperta rilassata della città.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_sera_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour serale in città con guida esperta
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a luoghi storici illuminati
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività outdoor ad alta intensità sconsigliata per evitare stress
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento comodo e scarpe da passeggio
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor serale in condizioni normali, perfetta per un tour rilassato e informativo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_sera_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour serale guidato in zona storica con guida in ambiente climatizzato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a monumenti con spiegazioni in ombra
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi outdoor sconsigliati in presenza di caldo elevato
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e idratazione costante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor serale in condizioni calde, ideale per un tour informativo e rilassante in ambienti ombreggiati.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_sera_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour serale della città con guida e spiegazioni sulle opere d’arte
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a gallerie d’arte storica
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi outdoor sconsigliati in presenza di caldo intenso
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e abbigliamento leggero
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor serale in condizioni calde, ideale per un tour storico in modo confortevole.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_culturale_outdoor_sera_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Culturale"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour serale con guida in ambiente coperto per proteggersi dai rovesci
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a mostre temporanee in spazi protetti
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Eventi outdoor sconsigliati in presenza di rovesci intensi
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Prenotare in anticipo e portare impermeabile
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività culturale outdoor serale in condizioni di caldo e rovesci, per un tour storico in sicurezza.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🏛️</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Attività Ricreativa -->
+
+  <!-- Indoor -->
+  <!-- Mattina -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_mattina_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Lettura rilassante in un caffè letterario con atmosfera intima
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Gioco da tavolo in compagnia in un ambiente accogliente
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per non affaticarsi
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Coperta leggera e abbigliamento caldo
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor mattutina in condizioni fredde, ideale per rilassarsi e socializzare in un ambiente protetto.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_mattina_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Lettura in biblioteca o caffè in ambiente climatizzato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Discussione rilassante in gruppo
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per il rischio di malessere
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento caldo e comodo
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor mattutina in condizioni fredde, per un momento di relax e conversazione.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_mattina_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Lettura rilassante in un caffè con atmosfera tranquilla
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Gioco da tavolo e conversazione amichevole
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per non sovraccaricare il corpo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento comodo e sedute confortevoli
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor mattutina in condizioni normali, ideale per rilassarsi e socializzare in un ambiente tranquillo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_mattina_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Lettura e relax in un caffè letterario
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Discussione di gruppo in ambiente accogliente
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per favorire il relax
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento confortevole e sedute rilassanti
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor mattutina in condizioni normali, ideale per un momento di calma e lettura.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_mattina_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in un caffè letterario climatizzato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Lettura tranquilla e conversazioni leggere
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per evitare surriscaldamento
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento leggero e idratazione
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor mattutina in condizioni di caldo, perfetta per rilassarsi in un ambiente fresco.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_mattina_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in un caffè con aria condizionata e atmosfera accogliente
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Lettura di un buon libro in ambiente confortevole
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per non stressare il corpo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Vestirsi leggermente e mantenersi idratati
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor mattutina in condizioni di caldo, ideale per un momento di relax e lettura.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Outdoor -->
+  <!-- Mattina -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_mattina_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata rilassante in un parco coperto da brina mattutina
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Colazione in caffetteria con riscaldamento interno
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per il freddo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento caldo e comodo, con cappotto
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor mattutina in condizioni fredde, perfetta per una passeggiata rilassante immersi nella natura.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_mattina_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata mattutina in un parco con aria fredda e pulita
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a un giardino botanico in condizioni fredde
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per preservare il comfort termico
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Indossare abbigliamento caldo e scarpe adatte per camminare
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor mattutina in condizioni fredde, ideale per godersi la natura in tranquillità.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_mattina_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata rilassante in un parco con luce morbida
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a un giardino pubblico per un momento di relax
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per favorire il relax
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe comode e abbigliamento leggero per una camminata piacevole
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor mattutina in condizioni normali, ideale per una passeggiata che rigenera la mente.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_mattina_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata mattutina in un parco soleggiato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax all’aperto in un’area verde
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per mantenere il relax
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Vestirsi in modo leggero e utilizzare scarpe comode
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor mattutina in condizioni normali, perfetta per un risveglio dolce e rilassante.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_mattina_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata mattutina in parco all'ombra per rinfrescarsi
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in un giardino botanico con temperature miti
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per evitare colpi di calore
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino e occhiali da sole, con idratazione costante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor mattutina in condizioni di caldo, ideale per una passeggiata in zone ombreggiate.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_mattina_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata mattutina leggera in area soleggiata con brevi pause
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax e meditazione all’aperto in ambiente fresco
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per il rischio di surriscaldamento
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e abbigliamento leggero
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor mattutina in condizioni di caldo, perfetta per un risveglio energico in zona soleggiata.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_mattina_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata mattutina in area coperta da rovesci, per rimanere attivi nonostante il maltempo
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in natura con soste coperte e camminate leggere
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata in presenza di rovesci forti
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Impermeabile e ombrello, per proteggersi dalla pioggia
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor mattutina in condizioni di caldo con rovesci, ideale per chi desidera camminare in sicurezza nonostante il maltempo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Indoor, fascia sera -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_sera_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Serata cinema in sala con proiezione rilassante
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Gioco da tavolo in compagnia
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per il rischio di freddo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sciarpa leggera o coperta per mantenersi caldi
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor serale in condizioni fredde, perfetta per una serata rilassante in compagnia.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_sera_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Serata relax con film in casa
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Gioco da tavolo e conversazioni tranquille
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per evitare malessere
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento caldo e una coperta accogliente
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor serale in condizioni fredde, ideale per una serata tranquilla e rilassante.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_sera_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Serata tranquilla con lettura e conversazioni in un caffè accogliente
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Gioco da tavolo con amici in ambiente rilassante
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per favorire il relax serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento comodo e sedute confortevoli
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor serale in condizioni normali, ideale per un momento di relax e socializzazione.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_sera_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Serata lettura in un caffè letterario con atmosfera rilassante
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Discussione e condivisione di libri in gruppo
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per preservare il relax
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sedute comode e ambiente tranquillo
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor serale in condizioni normali, perfetta per una serata di lettura e riflessione.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_sera_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Serata cinema in sala climatizzata con proiezione rilassante
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Gioco da tavolo e conversazioni tranquille in ambiente fresco
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per non surriscaldarsi
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Vestirsi leggermente e mantenersi idratati
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor serale in condizioni di caldo, ideale per una serata di relax in un ambiente fresco.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_sera_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Serata di relax con lettura in un ambiente climatizzato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Discussioni informali in gruppo in un locale fresco
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per evitare stress da calore
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Vestiti leggeri e abbondante idratazione
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor serale in condizioni di caldo, perfetta per rilassarsi e conversare in un ambiente confortevole.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_indoor_sera_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Indoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Serata di film in sala con ambiente climatizzato, nonostante rovesci intensi
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Gioco da tavolo e relax in un ambiente coperto
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività outdoor sconsigliata in presenza di rovesci forti
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento impermeabile e prenotazione anticipata
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa indoor serale in condizioni di caldo con rovesci, ideale per una serata tranquilla e sicura.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Outdoor, fascia sera -->
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale in un parco illuminato con aria fresca
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in una zona verde con amici
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per il freddo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Indossare una giacca calda e sciarpa
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni fredde, ideale per una passeggiata rilassante sotto le luci della città.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale in città con guide turistiche
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour dei monumenti storici illuminati
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività outdoor ad alta intensità sconsigliata per il freddo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Giacca pesante e accessori termici
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni fredde, perfetta per un tour culturale rilassante.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale rilassante in centro città
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in una terrazza panoramica
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per mantenere la calma
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Scarpe comode e abbigliamento casual
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni normali, ideale per una passeggiata rilassata e contemplativa.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale nel centro storico
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in una piazza illuminata
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività fisica intensa sconsigliata per non affaticarsi troppo
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento comodo e scarpe adatte per camminare
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni normali, perfetta per esplorare la città in modo rilassato.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale in area ombreggiata con vista panoramica
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in terrazza con clima controllato
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività outdoor ad alta intensità sconsigliata per il caldo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e idratazione costante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni di caldo, ideale per godersi una passeggiata in zona ombreggiata.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale leggera in zona fresca con vista cittadina
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in un locale con terrazza panoramica
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività outdoor intensa sconsigliata per evitare surriscaldamento
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e abbigliamento traspirante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni di caldo, perfetta per un'esperienza rilassante in un ambiente fresco.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale in zona coperta dai rovesci, con camminata rilassante
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in un locale con terrazza coperta
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività outdoor intensa sconsigliata in presenza di rovesci forti
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Impermeabile e ombrello robusto
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni di caldo e rovesci, ideale per chi desidera una passeggiata tranquilla nonostante il maltempo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- Attività Ricreativa, Outdoor, fascia sera -->
+  <!-- tipo: ricreativa, luogo: outdoor, fascia: sera -->
+
+  <!-- freddo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_freddo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale rilassante in parco con aria fresca
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Visita a un giardino botanico illuminato
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività intensa sconsigliata per il freddo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Giacca leggera e sciarpa per proteggersi dal freddo
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni fredde, ideale per una passeggiata rilassata sotto le luci della città.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_freddo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale nel centro storico con visita guidata
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Tour dei monumenti illuminati della città
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività intensa outdoor sconsigliata in condizioni fredde serali
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento termico e scarpe comode
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni fredde, perfetta per scoprire la città in modo rilassato.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- normale -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_normale_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale nel parco con ambiente rilassante
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in piazza con vista sulla città
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività intensa sconsigliata per mantenere la tranquillità
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento casual e scarpe da passeggio
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni normali, ideale per una passeggiata contemplativa nel centro.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_normale_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale rilassante lungo il lungomare
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Sosta in caffetteria all’aperto per un drink leggero
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività intensa sconsigliata per evitare affaticamento serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Abbigliamento leggero e scarpe comode
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni normali, perfetta per una passeggiata rilassante con vista sul mare.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <!-- caldo -->
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_caldo_nuvoloso">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale in zona ombreggiata con vista panoramica
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in terrazza con clima controllato
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività intensa outdoor sconsigliata per il caldo serale
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e idratazione costante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni di caldo, ideale per una passeggiata rilassante in un ambiente ombreggiato.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_caldo_scoperto">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale leggera in area fresca lungo il fiume
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in un locale con terrazza panoramica
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività intensa outdoor sconsigliata per evitare stress da calore
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Cappellino, occhiali da sole e abbigliamento traspirante
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni di caldo, ideale per godersi il fresco della sera lungo il fiume.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="#attivita_ricreativa_outdoor_sera_caldo_rovesci">
+    <rdf:type rdf:resource="#Attivita_Ricreativa"/>
+    <rdf:type rdf:resource="#Attivita_Outdoor"/>
+    <haAttivitaPrincipale rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Passeggiata serale in zona coperta dai rovesci, con ritmo rilassato
+    </haAttivitaPrincipale>
+    <haAttivitaSecondaria rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Relax in una terrazza coperta con vista sulla città
+    </haAttivitaSecondaria>
+    <haAttivitaAlternativa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività intensa outdoor sconsigliata in presenza di forti rovesci
+    </haAttivitaAlternativa>
+    <haAccessorioConsigliato rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Impermeabile robusto e ombrello resistente
+    </haAccessorioConsigliato>
+    <haDescrizione rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+      Attività ricreativa outdoor serale in condizioni di caldo e rovesci, ideale per una passeggiata tranquilla nonostante il maltempo.
+    </haDescrizione>
+    <haEmoji rdf:datatype="http://www.w3.org/2001/XMLSchema#string">🚶</haEmoji>
+  </owl:NamedIndividual>
+
+</rdf:RDF>
