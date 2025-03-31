@@ -1,5 +1,5 @@
-# ICON_24-25
-Progetto per il corso di "Ingegneria della conoscenza" a.a. 2024/2025
+# ICON_23-24
+Progetto per il corso di "Ingegneria della conoscenza" a.a. 2023/2024
 
 ## Presentazione
 
